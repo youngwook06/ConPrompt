@@ -1,5 +1,5 @@
 # ConPrompt
-Official implementation of the paper "ConPrompt: Pre-training a Language Model with Machine-Generated Data for Implicit Hate Speech Detection"
+Official implementation of the paper [ConPrompt: Pre-training a Language Model with Machine-Generated Data for Implicit Hate Speech Detection](https://aclanthology.org/2023.findings-emnlp.731) (Findings of EMNLP 2023)
 
 ## Preprocess ToxiGen Dataset
 We load the [ToxiGen](https://huggingface.co/datasets/skg/toxigen-data) dataset and preprocess the dataset for pre-training using preprocess_toxigen.ipynb.
@@ -23,7 +23,7 @@ You can convert the saved checkpoint to Huggingface's checkpoint format by:
 ```
 python simcse_to_huggingface.py --path result/ToxiGen-ConPrompt
 ```
-We will release the proposed pre-trained model (ToxiGen-ConPrompt) in [Huggingface's Model Hub](https://huggingface.co/models) shortly.
+We release the proposed pre-trained model (ToxiGen-ConPrompt) in [Huggingface's Model Hub](https://huggingface.co/youngggggg/ToxiGen-ConPrompt).
 
 ## Fine-tune and evaluate ToxiGen-ConPrompt on implicit hate speech datasets
 We fine-tune ToxiGen-ConPrompt on an implicit hate speech dataset and evaluate it on other implicit hate speech datasets (i.e., cross-dataset evaluation) to validate its generalization ability.
@@ -51,7 +51,7 @@ While these behavior can lead to social good e.g., constructing training data fo
 
 ## Acknowledgements
 - We use the [ToxiGen](https://huggingface.co/datasets/skg/toxigen-data) dataset as a pre-training source to pre-train our model. You can refer to the paper [here](https://aclanthology.org/2022.acl-long.234/).
-- We anonymize private information following the code from https://github.com/dhfbk/hate-speech-artifacts.
+- We anonymize private information in the pre-training source following the code from https://github.com/dhfbk/hate-speech-artifacts.
 - Our pre-training code is based on the code from https://github.com/princeton-nlp/SimCSE with some modification.
 - We use the code from https://github.com/youngwook06/ImpCon to fine-tune and evaluate our model.
 
